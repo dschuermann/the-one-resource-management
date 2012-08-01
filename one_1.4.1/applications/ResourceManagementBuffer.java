@@ -110,11 +110,11 @@ public class ResourceManagementBuffer {
                 partition.remove(messageToDelete);
 
                 ResourceManagementApplication
-                        .logWarning("Successfully dropped "
+                        .logImportant("Successfully dropped "
                                 + messageToDelete.getId());
             } catch (Exception e) {
                 ResourceManagementApplication
-                        .logWarning("Had no success deleting msg from buffer!"
+                        .logImportant("Had no success deleting msg from buffer!"
                                 + e.getMessage());
             }
         }
@@ -146,7 +146,7 @@ public class ResourceManagementBuffer {
             // partition
             if (msgToDrop == null) {
                 ResourceManagementApplication
-                        .logDebug("partition size <=1 and message in it... partitionIDToDropFrom: "
+                        .logImportant("message to drop is the only message in partition "
                                 + partitionIDToDropFrom);
 
                 // get second highest partition
@@ -254,6 +254,9 @@ public class ResourceManagementBuffer {
 
         }
 
+        ResourceManagementApplication.logDebug("Partition "
+                + highestPartitionID + " with highest usage " + highestUsage);
+
         int secondHighestPartitionID = -1;
 
         if (getSecond) {
@@ -292,11 +295,7 @@ public class ResourceManagementBuffer {
             ResourceManagementApplication.logDebug("Partition "
                     + secondHighestPartitionID + " with second highest usage "
                     + secondHighestUsage);
-
         }
-
-        ResourceManagementApplication.logDebug("Partition "
-                + highestPartitionID + " with highest usage " + highestUsage);
 
         if (getSecond) {
             return secondHighestPartitionID;
