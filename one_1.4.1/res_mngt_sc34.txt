@@ -1,0 +1,4 @@
+
+# RES HOGS
+resourceManagementApp.percentageOfResHogs = 5
+resourceManagementApp.intervalResHogs = 10 

@@ -1,0 +1,11 @@
+resourceManagementApp.simulateProxySignatures = true
+
+# seed
+MovementModel.rngSeed = [1; 2; 3; 4; 5]
+
+resourceManagementApp.probabilityToSendRequest = 40
+
+resourceManagementApp.interval = [100; 100; 100; 100; 100; 500; 500; 500; 500; 500; 1000; 1000; 1000; 1000; 1000; 2000; 2000; 2000; 2000; 2000; 5000; 5000; 5000; 5000; 5000]
+
+
+ResourceManagementAppReporter.output = [reports/sc6_100_seed1.txt; reports/sc6_100_seed2.txt; reports/sc6_100_seed3.txt; reports/sc6_100_seed4.txt; reports/sc6_100_seed5.txt; reports/sc6_500_seed1.txt; reports/sc6_500_seed2.txt; reports/sc6_500_seed3.txt; reports/sc6_500_seed4.txt; reports/sc6_500_seed5.txt; reports/sc6_1000_seed1.txt; reports/sc6_1000_seed2.txt; reports/sc6_1000_seed3.txt; reports/sc6_1000_seed4.txt; reports/sc6_1000_seed5.txt; reports/sc6_2000_seed1.txt; reports/sc6_2000_seed2.txt; reports/sc6_2000_seed3.txt; reports/sc6_2000_seed4.txt; reports/sc6_2000_seed5.txt; reports/sc6_5000_seed1.txt; reports/sc6_5000_seed2.txt; reports/sc6_5000_seed3.txt; reports/sc6_5000_seed4.txt; reports/sc6_5000_seed5.txt]

@@ -1,0 +1,7 @@
+*.class
+reports
+
+#Eclipse
+*.project
+*.classpath
+*.settings
