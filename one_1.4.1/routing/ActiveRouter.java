@@ -10,9 +10,6 @@ import java.util.Collections;
 import java.util.List;
 import java.util.Random;
 
-import applications.ResourceManagementApplication;
-
-import core.Application;
 import core.Connection;
 import core.DTNHost;
 import core.Message;
@@ -266,16 +263,6 @@ public abstract class ActiveRouter extends MessageRouter {
 		for (int i=0; i<messages.length; i++) {
 			int ttl = messages[i].getTtl(); 
 			if (ttl <= 0) {
-                // IMPORTANT: ALSO DROP FROM RESOURCE MANAGEMENT BUFFER!!!
-                //-------------------------------------------
-                Collection<Application> apps = this
-                                .getApplications(ResourceManagementApplication.APP_ID);
-                for (Application app : apps) {
-                        ResourceManagementApplication resourceManagementApp = (ResourceManagementApplication) app;
-                        resourceManagementApp.dropExpiredMessage(this.getHost(), messages[i].getId());
-                }
-                //-------------------------------------------
-
 				deleteMessage(messages[i].getId(), true);
 			}
 		}

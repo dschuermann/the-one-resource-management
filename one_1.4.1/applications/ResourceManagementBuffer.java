@@ -114,8 +114,8 @@ public class ResourceManagementBuffer {
                                 + messageToDelete.getId());
             } catch (Exception e) {
                 ResourceManagementApplication
-                        .logImportant("Had no success deleting msg from buffer!"
-                                + e.getMessage());
+                        .logImportant("Had no success deleting msg from buffer! ("
+                                + e.getMessage() + ")");
             }
         }
     }
@@ -173,7 +173,7 @@ public class ResourceManagementBuffer {
                 }
             } else {
                 ResourceManagementApplication
-                        .logWarning("bufferHost.deleteMessage is null! This should not happen!");
+                        .logWarning("msgToDrop is null! This should not happen!");
             }
         }
     }
@@ -212,9 +212,6 @@ public class ResourceManagementBuffer {
 
     /**
      * Gets ID of partition with highest partition usage
-     * 
-     * excludePartitionID to not drop from the partition where we currently
-     * added the new message! This would lead to an error!
      * 
      * @param getSecond
      *            when true, method will return second highest partition
@@ -260,7 +257,6 @@ public class ResourceManagementBuffer {
         int secondHighestPartitionID = -1;
 
         if (getSecond) {
-
             int secondHighestUsage = -1;
 
             Iterator<Entry<Integer, HashSet<Message>>> it2 = buffer.entrySet()

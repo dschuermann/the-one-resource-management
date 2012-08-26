@@ -12,6 +12,8 @@ import java.util.LinkedList;
 import java.util.List;
 import java.util.Random;
 
+import applications.ResourceManagementApplication;
+
 import core.Application;
 import core.Connection;
 import core.DTNHost;
@@ -451,6 +453,16 @@ public abstract class MessageRouter {
 	 * because it was delivered to final destination.  
 	 */
 	public void deleteMessage(String id, boolean drop) {
+	    // IMPORTANT: ALSO DROP FROM RESOURCE MANAGEMENT BUFFER!!!
+        //-------------------------------------------
+        Collection<Application> apps = this
+                        .getApplications(ResourceManagementApplication.APP_ID);
+        for (Application app : apps) {
+                ResourceManagementApplication resourceManagementApp = (ResourceManagementApplication) app;
+                resourceManagementApp.dropExpiredMessage(this.getHost(), id);
+        }
+        //-------------------------------------------
+        
 		Message removed = removeFromMessages(id); 
 		if (removed == null) throw new SimError("no message for id " +
 				id + " to remove at " + this.host);
