@@ -2,7 +2,9 @@
 
 This is an Application class for the Opportunistic Network Environment simulator (the ONE) to simulate Resource Management.
 
-see http://www.netlab.tkk.fi/tutkimus/dtn/theone/
+The basic ideas are taken from the paper ``J. Solis, N. Asokan, K. Kostiainen, P. Ginzboorg, and J. Ott, "Controlling resource hogs in mobile delay-tolerant networks," Computer Communications, vol. 33, no. 1, pp. 2–10, May 14, 2010.`` (http://www.sciencedirect.com/science/article/pii/S0140366409002151)
+
+For more information on the ONE, go to http://www.netlab.tkk.fi/tutkimus/dtn/theone/.
 
 ## Implementation Details
 The ``ResourceManagementBuffer`` implements a second buffer besides the buffer in the ONE. Every node has its own instance of ``ResourceManagementBuffer``. The buffer is based on a ``HashMap<Integer, HashSet<Message>>`` where a node address corresponds to partition ``HashSet<Message>``. When the buffer is full on new incoming messages, old messages are dropped from the most exceeding partition, until the new message fits in the buffer.
