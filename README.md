@@ -23,4 +23,4 @@ New classes:
 * report/ResourceManagementAppReporter
 
 Changes:
-* routing/MessageRouter.removeMessage()
+* routing/MessageRouter.deleteMessage()

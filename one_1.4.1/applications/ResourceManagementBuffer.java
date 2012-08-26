@@ -88,7 +88,7 @@ public class ResourceManagementBuffer {
      * @param bufferHost
      * @param messageID
      */
-    public void removeMessage(DTNHost bufferHost, String messageID) {
+    public void deleteMessage(DTNHost bufferHost, String messageID) {
 
         Message messageToDelete = null;
         // go through all buffers
