@@ -23,4 +23,4 @@ New classes:
 * report/ResourceManagementAppReporter
 
 Changes:
-* routing/ActiveRouter.dropExpiredMessage()
+* routing/MessageRouter.removeMessage()
