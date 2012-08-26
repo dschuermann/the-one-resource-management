@@ -2,7 +2,7 @@
 
 This is an Application class for the Opportunistic Network Environment simulator (the ONE) to simulate Resource Management.
 
-The basic ideas are taken from the paper ``J. Solis, N. Asokan, K. Kostiainen, P. Ginzboorg, and J. Ott, "Controlling resource hogs in mobile delay-tolerant networks," Computer Communications, vol. 33, no. 1, pp. 2–10, May 14, 2010.`` (http://www.sciencedirect.com/science/article/pii/S0140366409002151)
+The basic ideas are taken from the paper "Controlling resource hogs in mobile delay-tolerant networks" by J. Solis, N. Asokan, K. Kostiainen, P. Ginzboorg, and J. Ott (http://www.sciencedirect.com/science/article/pii/S0140366409002151)
 
 For more information on the ONE, go to http://www.netlab.tkk.fi/tutkimus/dtn/theone/.
 
