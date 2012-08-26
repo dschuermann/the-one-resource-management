@@ -577,14 +577,14 @@ public class ResourceManagementApplication extends Application {
 
     /**
      * This method is executed by hard code in
-     * ActiveRouter.dropExpiredMessages()
+     * routing/MessageRouter.removeMessage()
      * 
-     * It removes the expired messages also from our buffer system
+     * It also removes messages from our buffer system
      * 
      * @param host
      * @param messageID
      */
-    public void dropExpiredMessage(DTNHost host, String messageID) {
+    public void removeMessage(DTNHost host, String messageID) {
         buffer[host.getAddress()].removeMessage(host, messageID);
     }
 

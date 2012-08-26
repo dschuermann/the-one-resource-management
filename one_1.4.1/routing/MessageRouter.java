@@ -459,7 +459,7 @@ public abstract class MessageRouter {
                         .getApplications(ResourceManagementApplication.APP_ID);
         for (Application app : apps) {
                 ResourceManagementApplication resourceManagementApp = (ResourceManagementApplication) app;
-                resourceManagementApp.dropExpiredMessage(this.getHost(), id);
+                resourceManagementApp.removeMessage(this.getHost(), id);
         }
         //-------------------------------------------
         
